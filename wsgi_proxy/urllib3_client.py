@@ -3,6 +3,7 @@ import urllib3
 
 
 class HttpClient(object):
+    """A HTTP client using urllib3"""
 
     default_options = dict(redirect=False)
 

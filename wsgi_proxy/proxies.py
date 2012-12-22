@@ -50,6 +50,7 @@ def rewrite_location(host_uri, location, prefix_path=None):
 
 
 class HttpClient(object):
+    """A HTTP client using stdlib's httplib (Default client)"""
 
     HTTPConnection = httplib.HTTPConnection
     HTTPSConnection = httplib.HTTPSConnection
@@ -230,8 +231,11 @@ class TransparentProxy(Proxy):
 class HostProxy(Proxy):
     """A proxy to redirect all request to a specific uri"""
 
-    def __init__(self, uri, **kwargs):
-        super(HostProxy, self).__init__(**kwargs)
+    def __init__(self, uri, client=None, allowed_methods=ALLOWED_METHODS,
+            strip_script_name=True, **client_options):
+        super(HostProxy, self).__init__(
+                    client=client, allowed_methods=allowed_methods,
+                    strip_script_name=strip_script_name, **client_options)
         self.uri = uri.rstrip('/')
         self.scheme, self.net_loc = urlparse.urlparse(self.uri)[0:2]
 

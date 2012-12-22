@@ -3,6 +3,7 @@ import requests
 
 
 class HttpClient(object):
+    """A HTTP client using requests"""
 
     default_options = dict(verify=False, allow_redirects=False)
 

@@ -3,9 +3,10 @@ from restkit.client import Client
 
 
 class HttpClient(object):
+    """A HTTP client using restkit"""
 
-    def __init__(self, client=None, **kwargs):
-        self.client = client or Client(**kwargs)
+    def __init__(self, restkit_client=None, **restkit_options):
+        self.client = restkit_client or Client(**restkit_options)
 
     def __call__(self, uri, method, body, headers):
         response = self.client.request(uri, method, body=body, headers=headers)
