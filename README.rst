@@ -29,9 +29,4 @@ WSGI application::
   ...</html>
 
 The Proxy application accept some keyword arguments. Those arguments are passed
-to requests during the process.  By default ``allow_redirects`` and ``verify``
-are set to ``False`` but you can change the behavior::
-
-  >>> proxy = HostProxy(application_url, verify=True, allow_redirects=True,
-  ...                   max_redirects=10)
-
+to the client during the process.
