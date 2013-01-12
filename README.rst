@@ -31,15 +31,17 @@ WSGI application::
 The Proxy application accept some keyword arguments. Those arguments are passed
 to the client during the process.
 
-Use `requests <http://pypi.python.org/pypi/requests>`_::
-
-  >>> proxy = HostProxy(application_url, client='requests')
-
-Use `restkit <http://pypi.python.org/pypi/restkit>`_::
-
-  >>> proxy = HostProxy(application_url, client='restkit') # doctest: +SKIP
-
 Use `urllib3 <http://pypi.python.org/pypi/urllib3>`_::
 
   >>> proxy = HostProxy(application_url, client='urllib3')
+
+Use `requests <http://pypi.python.org/pypi/requests>`_. This client support response streaming::
+
+  >>> proxy = HostProxy(application_url, client='requests')
+
+Use `restkit <http://pypi.python.org/pypi/restkit>`_. This client support
+request and response streaming but does not support python3 (will be fixed with
+the next release)::
+
+  >>> proxy = HostProxy(application_url, client='restkit') # doctest: +SKIP
 
