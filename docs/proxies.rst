@@ -2,7 +2,7 @@
 Available proxies
 =================
 
-.. automodule:: wsgi_proxy.proxies
+.. automodule:: wsgiproxy.proxies
 
 .. autoclass:: Proxy
 

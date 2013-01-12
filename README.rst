@@ -3,7 +3,7 @@ Installation
 
 With pip::
 
-  $ pip install wsgi_proxy
+  $ pip install WSGIProxy2
 
 Install optionnal backends::
 

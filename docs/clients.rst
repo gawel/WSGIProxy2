@@ -2,13 +2,13 @@
 Available http client adapters
 ==============================
 
-.. autoclass:: wsgi_proxy.proxies.HttpClient
+.. autoclass:: wsgiproxy.proxies.HttpClient
 
-.. autoclass:: wsgi_proxy.urllib3_client.HttpClient
+.. autoclass:: wsgiproxy.urllib3_client.HttpClient
 
-.. autoclass:: wsgi_proxy.requests_client.HttpClient
+.. autoclass:: wsgiproxy.requests_client.HttpClient
 
-.. autoclass:: wsgi_proxy.restkit_client.HttpClient
+.. autoclass:: wsgiproxy.restkit_client.HttpClient
 
 Use your own HTTP client::
 
