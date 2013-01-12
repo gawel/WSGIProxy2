@@ -14,7 +14,7 @@ setup(name='wsgi_proxy',
       version=version,
       long_description=read('README.rst') + '\n' + read('CHANGES.rst'),
       classifiers=[
-          'License :: OSI Approved :: Apache Software License',
+          'License :: OSI Approved :: MIT License',
           'Topic :: Internet :: WWW/HTTP :: WSGI :: Application',
           'Programming Language :: Python :: 2.6',
           'Programming Language :: Python :: 2.7',
