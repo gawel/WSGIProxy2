@@ -31,6 +31,9 @@ WSGI application::
 The Proxy application accept some keyword arguments. Those arguments are passed
 to the client during the process.
 
+If no client as specified then python httplib is used. It's recommended to use
+a more robust client able to manage a connection pool and stuff.
+
 Use `urllib3 <http://pypi.python.org/pypi/urllib3>`_::
 
   >>> proxy = HostProxy(application_url, client='urllib3')
