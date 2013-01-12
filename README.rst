@@ -15,7 +15,7 @@ Usage
 
 Create a proxy::
 
-  >>> from wsgi_proxy import HostProxy
+  >>> from wsgiproxy import HostProxy
   >>> proxy = HostProxy(application_url)
 
 Then use it. Here is an example with WebOb but you can use it like a classic
