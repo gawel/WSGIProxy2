@@ -18,12 +18,4 @@ Contents
    proxies
    clients
 
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
+.. include:: ../CHANGES.rst
