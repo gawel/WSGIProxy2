@@ -10,7 +10,7 @@ def read(name):
     except:
         return ''
 
-setup(name='wsgi_proxy',
+setup(name='WSGIProxy2',
       version=version,
       long_description=read('README.rst') + '\n' + read('CHANGES.rst'),
       classifiers=[

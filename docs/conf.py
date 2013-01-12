@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# wsgi_proxy documentation build configuration file, created by
+# WSGIProxy2 documentation build configuration file, created by
 # sphinx-quickstart on Sat Dec 22 15:44:24 2012.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -40,7 +40,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'wsgi_proxy'
+project = u'WSGIProxy2'
 copyright = u'2012, Gael Pasgrimaud'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -164,7 +164,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'wsgi_proxydoc'
+htmlhelp_basename = 'WSGIProxy2doc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -183,7 +183,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'wsgi_proxy.tex', u'wsgi\\_proxy Documentation',
+  ('index', 'WSGIProxy2.tex', u'wsgi\\_proxy Documentation',
    u'Gael Pasgrimaud', 'manual'),
 ]
 
@@ -213,7 +213,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'wsgi_proxy', u'wsgi_proxy Documentation',
+    ('index', 'WSGIProxy2', u'WSGIProxy2 Documentation',
      [u'Gael Pasgrimaud'], 1)
 ]
 
@@ -227,8 +227,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'wsgi_proxy', u'wsgi_proxy Documentation',
-   u'Gael Pasgrimaud', 'wsgi_proxy', 'One line description of project.',
+  ('index', 'WSGIProxy2', u'WSGIProxy2 Documentation',
+   u'Gael Pasgrimaud', 'WSGIProxy2', 'One line description of project.',
    'Miscellaneous'),
 ]
 

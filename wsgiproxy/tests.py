@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import unittest
-from wsgi_proxy import proxies
+from wsgiproxy import proxies
 from webtest import TestApp
 from webtest.debugapp import debug_app
 from webtest.http import StopableWSGIServer

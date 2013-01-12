@@ -103,7 +103,7 @@ class Proxy(object):
         elif hasattr(client, '__call__'):
             self.http = client
         else:
-            mod = __import__('wsgi_proxy.%s_client' % client,
+            mod = __import__('wsgiproxy.%s_client' % client,
                              globals(), locals(), [''])
             self.http = mod.HttpClient(**client_options)
         self.logger = logging.getLogger(__name__)
