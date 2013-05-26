@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-version = '0.1'
+version = '0.2'
 
 
 def read(name):
@@ -20,7 +20,7 @@ setup(name='WSGIProxy2',
           'Programming Language :: Python :: 2.7',
           'Programming Language :: Python :: 3.2',
           'Programming Language :: Python :: 3.3',
-          ],
+      ],
       keywords='wsgi proxy',
       author='Gael Pasgrimaud',
       author_email='gael@gawel.org',
