@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import requests
+from functools import partial
 
 
 class HttpClient(object):
@@ -21,6 +22,7 @@ class HttpClient(object):
             del headers['Transfer-Encoding']
         if headers.get('Content-Length'):
             kwargs['data'] = body.read(int(headers['Content-Length']))
+        kwargs['stream'] = True
 
         if self.session is None:
             session = requests.sessions.Session()
@@ -30,6 +32,8 @@ class HttpClient(object):
 
         location = response.headers.get('location') or None
         status = '%s %s' % (response.status_code, response.reason)
+
         headers = [(k.title(), v) for k, v in response.headers.items()]
+
         return (status, location, headers,
-                response.iter_content(chunk_size=self.chunk_size))
+                iter(partial(response.raw.read, self.chunk_size), ''))
