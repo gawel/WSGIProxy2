@@ -1,8 +1,8 @@
 Changes
 =======
 
-0.3
----
+0.3 (2013-09-12)
+----------------
 
 Make allowed_methods check optional
 
