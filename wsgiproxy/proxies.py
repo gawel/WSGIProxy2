@@ -132,8 +132,9 @@ class Proxy(object):
 
     def __call__(self, environ, start_response):
         method = environ['REQUEST_METHOD']
-        if method not in self.allowed_methods:
-            return exc.HTTPMethodNotAllowed()(environ, start_response)
+        if (self.allowed_methods is not None and
+            method not in self.allowed_methods):
+                return exc.HTTPMethodNotAllowed()(environ, start_response)
 
         if self.strip_script_name:
             path_info = ''
