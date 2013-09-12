@@ -1,0 +1,6 @@
+graft docs
+prune docs/_build
+graft wsgiproxy
+include *.rst
+global-exclude *.pyc
+global-exclude __pycache__
