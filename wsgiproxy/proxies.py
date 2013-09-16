@@ -23,11 +23,12 @@ ABSOLUTE_URL_RE = re.compile(r"^https?://", re.I)
 
 ALLOWED_METHODS = ['GET', 'HEAD', 'POST', 'PUT', 'DELETE']
 
-WEBOB_ERROR = ("Content-Length is set to -1. This usually mean that WebOb has "
-        "already parsed the content body. You should set the Content-Length "
-        "header to the correct value before forwarding your request to the "
-        "proxy: ``req.content_length = str(len(req.body));`` "
-        "req.get_response(proxy)")
+WEBOB_ERROR = (
+    "Content-Length is set to -1. This usually mean that WebOb has "
+    "already parsed the content body. You should set the Content-Length "
+    "header to the correct value before forwarding your request to the "
+    "proxy: ``req.content_length = str(len(req.body));`` "
+    "req.get_response(proxy)")
 
 
 def rewrite_location(host_uri, location, prefix_path=None):
@@ -45,7 +46,8 @@ def rewrite_location(host_uri, location, prefix_path=None):
         return location
     elif url.scheme == host_url.scheme and url.netloc == host_url.netloc:
         return urlparse.urlunparse((host_url.scheme, host_url.netloc,
-            prefix_path + url.path, url.params, url.query, url.fragment))
+                                    prefix_path + url.path, url.params,
+                                    url.query, url.fragment))
     return location
 
 
@@ -92,10 +94,10 @@ class Proxy(object):
         'SCRIPT_NAME': 'X_FORWARDED_SCRIPT_NAME',
         'wsgi.url_scheme': 'X_FORWARDED_SCHEME',
         'REMOTE_ADDR': 'X_FORWARDED_FOR',
-        }
+    }
 
     def __init__(self, client=None, allowed_methods=ALLOWED_METHODS,
-            strip_script_name=True, **client_options):
+                 strip_script_name=True, **client_options):
         self.allowed_methods = allowed_methods
         self.strip_script_name = strip_script_name
         if client is None or client == 'httplib':
@@ -133,7 +135,7 @@ class Proxy(object):
     def __call__(self, environ, start_response):
         method = environ['REQUEST_METHOD']
         if (self.allowed_methods is not None and
-            method not in self.allowed_methods):
+                method not in self.allowed_methods):
                 return exc.HTTPMethodNotAllowed()(environ, start_response)
 
         if self.strip_script_name:
@@ -194,7 +196,7 @@ class Proxy(object):
                 prefix_path = None
 
             new_location = rewrite_location(host_uri, location,
-                    prefix_path=prefix_path)
+                                            prefix_path=prefix_path)
 
             headers = []
             for k, v in headerslist:
@@ -233,10 +235,10 @@ class HostProxy(Proxy):
     """A proxy to redirect all request to a specific uri"""
 
     def __init__(self, uri, client=None, allowed_methods=ALLOWED_METHODS,
-            strip_script_name=True, **client_options):
+                 strip_script_name=True, **client_options):
         super(HostProxy, self).__init__(
-                    client=client, allowed_methods=allowed_methods,
-                    strip_script_name=strip_script_name, **client_options)
+            client=client, allowed_methods=allowed_methods,
+            strip_script_name=strip_script_name, **client_options)
         self.uri = uri.rstrip('/')
         self.scheme, self.net_loc = urlparse.urlparse(self.uri)[0:2]
 
