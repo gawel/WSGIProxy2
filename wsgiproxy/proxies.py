@@ -239,7 +239,7 @@ class HostProxy(Proxy):
         super(HostProxy, self).__init__(
             client=client, allowed_methods=allowed_methods,
             strip_script_name=strip_script_name, **client_options)
-        self.uri = uri.rstrip('/')
+        self.uri = str(uri.rstrip('/'))
         self.scheme, self.net_loc = urlparse.urlparse(self.uri)[0:2]
 
     def extract_uri(self, environ):
