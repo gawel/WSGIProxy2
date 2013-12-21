@@ -1,8 +1,8 @@
 Changes
 =======
 
-0.5 (unreleased)
-----------------
+0.4.1 (2013-12-21)
+------------------
 
 - Include README_fixt.py in release
 
