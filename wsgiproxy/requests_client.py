@@ -22,6 +22,8 @@ class HttpClient(object):
             del headers['Transfer-Encoding']
         if headers.get('Content-Length'):
             kwargs['data'] = body.read(int(headers['Content-Length']))
+        elif not body:
+            headers['Content-Length'] = '0'
         kwargs['stream'] = True
 
         if self.session is None:
@@ -36,4 +38,4 @@ class HttpClient(object):
         headers = [(k.title(), v) for k, v in response.headers.items()]
 
         return (status, location, headers,
-                iter(partial(response.raw.read, self.chunk_size), ''))
+                response.iter_content(self.chunk_size, False))

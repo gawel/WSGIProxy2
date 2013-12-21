@@ -66,30 +66,30 @@ class TestHttplib(unittest.TestCase):
     def test_redirect(self):
         location = self.application_url + '/form.html'
         resp = self.app.get(
-                '/?status=301%20Redirect&header-location=' + location,
-                status='*')
+            '/?status=301%20Redirect&header-location=' + location,
+            status='*')
         self.assertEqual(resp.status_int, 301, resp)
         self.assertEqual(resp.location, location)
 
         location = 'http://foo.com'
         resp = self.app.get(
-                '/?status=301%20Redirect&header-location=' + location,
-                status='*')
+            '/?status=301%20Redirect&header-location=' + location,
+            status='*')
         self.assertEqual(resp.status_int, 301, resp)
         self.assertEqual(resp.location, location)
 
         location = '/foo'
         resp = self.app.get(
-                '/?status=301%20Redirect&header-location=' + location,
-                status='*')
+            '/?status=301%20Redirect&header-location=' + location,
+            status='*')
         self.assertEqual(resp.status_int, 301, resp)
         self.assertEqual(resp.location, self.application_url + location)
 
         location = self.application_url + '/script_name/form.html'
         self.proxy.strip_script_name = False
         resp = self.app.get(
-                '/?status=301%20Redirect&header-Location=' + location,
-                status='*', extra_environ={'SCRIPT_NAME': '/script_name'})
+            '/?status=301%20Redirect&header-Location=' + location,
+            status='*', extra_environ={'SCRIPT_NAME': '/script_name'})
         self.assertEqual(resp.status_int, 301, resp)
         self.assertEqual(resp.location, location)
 
@@ -128,7 +128,8 @@ class TestRestkit(TestHttplib):
     def test_chunked(self):
         resp = self.app.get('/',
                             headers=[('Transfer-Encoding', 'chunked')])
-        resp.mustcontain('chunked')
+        # waitress suppress the header
+        resp.mustcontain(no='chunked')
 
 
 class TestExtractUri(unittest.TestCase):
