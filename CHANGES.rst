@@ -1,10 +1,12 @@
 Changes
 =======
 
-0.4 (unreleased)
+0.4 (2013-12-21)
 ----------------
 
-- Nothing changed yet.
+- fix tests.
+
+- change the way requests iter response
 
 
 0.3 (2013-09-12)
