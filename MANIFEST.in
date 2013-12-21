@@ -2,5 +2,6 @@ graft docs
 prune docs/_build
 graft wsgiproxy
 include *.rst
+include *_fixt.py
 global-exclude *.pyc
 global-exclude __pycache__

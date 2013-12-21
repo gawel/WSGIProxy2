@@ -4,7 +4,7 @@ Changes
 0.5 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Include README_fixt.py in release
 
 
 0.4 (2013-12-21)
