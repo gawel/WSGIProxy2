@@ -3,6 +3,7 @@
 # This file is part of restkit released under the MIT license.
 # See the NOTICE for more information.
 from webob import exc
+from webob.compat import PY3, url_quote
 import logging
 import socket
 import six
@@ -18,6 +19,7 @@ try:
 except ImportError:  # pragma: nocover
     import http.client as httplib  # NOQA
 
+LOW_CHAR_SAFE = ''.join(chr(n) for n in range(128))
 
 ABSOLUTE_URL_RE = re.compile(r"^https?://", re.I)
 
@@ -143,6 +145,9 @@ class Proxy(object):
         else:
             path_info = environ['SCRIPT_NAME']
         path_info += environ['PATH_INFO']
+
+        if PY3:
+            path_info = url_quote(path_info.encode('latin-1'), LOW_CHAR_SAFE)
 
         query_string = environ['QUERY_STRING']
         if query_string:
