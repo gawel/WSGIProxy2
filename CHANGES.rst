@@ -1,7 +1,7 @@
 Changes
 =======
 
-0.4.2 (unreleased)
+0.4.2 (2014-12-20)
 ------------------
 
 - Undo webob's unquoting to handle paths with percent quoted utf8 characters
