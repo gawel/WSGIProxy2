@@ -98,6 +98,11 @@ class TestHttplib(unittest.TestCase):
                             headers=[('Transfer-Encoding', 'chunked')])
         resp.mustcontain(no='chunked')
 
+    def test_quoted_utf8_url(self):
+        path = '/targets/NR2F1%C3%82-human/'
+        resp = self.app.get(path)
+        resp.mustcontain(b'PATH_INFO: /targets/NR2F1\xc3\x82-human/')
+
     def tearDown(self):
         self.server.shutdown()
 
