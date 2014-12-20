@@ -13,6 +13,7 @@ def read(name):
 setup(name='WSGIProxy2',
       version=version,
       long_description=read('README.rst') + '\n' + read('CHANGES.rst'),
+      description='A WSGI Proxy with various http client backends',
       classifiers=[
           'License :: OSI Approved :: MIT License',
           'Topic :: Internet :: WWW/HTTP :: WSGI :: Application',
