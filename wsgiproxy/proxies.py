@@ -140,18 +140,24 @@ class Proxy(object):
                 method not in self.allowed_methods):
                 return exc.HTTPMethodNotAllowed()(environ, start_response)
 
-        if self.strip_script_name:
-            path_info = ''
+        if 'RAW_URI' in environ:
+            path_info = environ['RAW_URI']
+        elif 'REQUEST_URI' in environ:
+            path_info = environ['REQUEST_URI']
         else:
-            path_info = environ['SCRIPT_NAME']
-        path_info += environ['PATH_INFO']
+            if self.strip_script_name:
+                path_info = ''
+            else:
+                path_info = environ['SCRIPT_NAME']
+            path_info += environ['PATH_INFO']
 
-        if PY3:
-            path_info = url_quote(path_info.encode('latin-1'), LOW_CHAR_SAFE)
+            if PY3:
+                path_info = url_quote(path_info.encode('latin-1'),
+                                      LOW_CHAR_SAFE)
 
-        query_string = environ['QUERY_STRING']
-        if query_string:
-            path_info += '?' + query_string
+            query_string = environ['QUERY_STRING']
+            if query_string:
+                path_info += '?' + query_string
 
         for key, dest in self.header_map.items():
             value = environ.get(key)
