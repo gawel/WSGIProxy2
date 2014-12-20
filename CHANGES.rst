@@ -4,7 +4,8 @@ Changes
 0.4.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Undo webob's unquoting to handle paths with percent quoted utf8 characters
+  [Laurence Rowe]
 
 
 0.4.1 (2013-12-21)
