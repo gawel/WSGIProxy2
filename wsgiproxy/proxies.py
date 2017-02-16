@@ -23,7 +23,7 @@ LOW_CHAR_SAFE = ''.join(chr(n) for n in range(128))
 
 ABSOLUTE_URL_RE = re.compile(r"^https?://", re.I)
 
-ALLOWED_METHODS = ['GET', 'HEAD', 'POST', 'PUT', 'DELETE']
+ALLOWED_METHODS = ['GET', 'HEAD', 'POST', 'PUT', 'DELETE', 'OPTIONS']
 
 WEBOB_ERROR = (
     "Content-Length is set to -1. This usually mean that WebOb has "
