@@ -5,3 +5,8 @@ include *.rst
 include *_fixt.py
 global-exclude *.pyc
 global-exclude __pycache__
+include *.py
+include *.txt
+include COPYING
+include buildout.cfg
+include tox.ini
