@@ -4,7 +4,11 @@ Changes
 0.4.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add OPTIONS to defaults allowed methods
+
+- Drop restkit support
+
+- Drop py26 support
 
 
 0.4.2 (2014-12-20)
