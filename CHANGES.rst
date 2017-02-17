@@ -1,7 +1,7 @@
 Changes
 =======
 
-0.4.3 (unreleased)
+0.4.3 (2017-02-17)
 ------------------
 
 - Add OPTIONS to defaults allowed methods
