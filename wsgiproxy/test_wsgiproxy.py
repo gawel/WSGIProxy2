@@ -7,16 +7,8 @@ from webtest.http import StopableWSGIServer
 from webob import Request
 import logging
 import socket
-import sys
 
 logging.getLogger('waitress').setLevel(logging.DEBUG)
-
-
-def skip(klass):
-    if sys.version_info[0] > 2:
-        print(sys.version_info)
-        return None
-    return klass
 
 
 def start_response(*args):
@@ -54,10 +46,6 @@ class TestHttplib(unittest.TestCase):
         req.content_length = '-1'
         resp = req.get_response(self.proxy)
         self.assertEqual(resp.status_int, 500, resp)
-
-    def test_not_allowed_method(self):
-        resp = self.app.options('/', status='*')
-        self.assertEqual(resp.status_int, 405)
 
     def test_status(self):
         resp = self.app.get('/?status=404', status='*')
@@ -115,26 +103,6 @@ class TestUrllib3(TestHttplib):
 class TestRequests(TestHttplib):
 
     client = 'requests'
-
-
-@skip
-class TestRestkit(TestHttplib):
-
-    client = 'restkit'
-
-    def setUp(self):
-        # we set a pool to not keep connection opened during testing
-        from socketpool import ConnectionPool
-        from restkit.conn import Connection
-        self.client_options = dict(pool=ConnectionPool(factory=Connection,
-                                                       max_lifetime=.001))
-        super(TestRestkit, self).setUp()
-
-    def test_chunked(self):
-        resp = self.app.get('/',
-                            headers=[('Transfer-Encoding', 'chunked')])
-        # waitress suppress the header
-        resp.mustcontain(no='chunked')
 
 
 class TestExtractUri(unittest.TestCase):
