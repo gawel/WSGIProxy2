@@ -83,8 +83,10 @@ class HttpClient(object):
         status = '%s %s' % (response.status, response.reason)
         length = response.getheader('content-length')
         body = response.read(int(length)) if length else response.read()
-        return (status, response.getheader('location', None),
-                response.getheaders(), [body])
+        result = (status, response.getheader('location', None),
+                  response.getheaders(), [body])
+        conn.close()
+        return result
 
 
 class Proxy(object):
