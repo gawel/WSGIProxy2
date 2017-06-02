@@ -4,7 +4,8 @@ Changes
 0.4.4 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Clean up connection before returning result. This removes some
+  ResourceWarnings when testing
 
 
 0.4.3 (2017-02-17)
