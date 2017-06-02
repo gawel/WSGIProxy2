@@ -1,7 +1,7 @@
 Changes
 =======
 
-0.4.4 (unreleased)
+0.4.4 (2017-06-02)
 ------------------
 
 - Clean up connection before returning result. This removes some
