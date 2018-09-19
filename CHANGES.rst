@@ -4,7 +4,7 @@ Changes
 0.4.5 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Allow to use URIs with no path
 
 
 0.4.4 (2017-06-02)
