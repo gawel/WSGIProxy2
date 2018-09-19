@@ -72,6 +72,7 @@ class HttpClient(object):
         except ValueError:
             host = uri
             path = ''
+        path = '/' + path
         if ':' in host:
             host, port = host.split(':')
         conn = ConnClass('%s:%s' % (host, port))
