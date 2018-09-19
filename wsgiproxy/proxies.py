@@ -68,7 +68,11 @@ class HttpClient(object):
         uri = ssl and uri[8:] or uri[7:]
         port = ssl and 443 or 80
         host, path = uri.split('/', 1)
-        path = '/' + path
+        try:
+            host, path = uri.split('/', 1)
+        except ValueError:
+            host = uri
+            path = ''
         if ':' in host:
             host, port = host.split(':')
         conn = ConnClass('%s:%s' % (host, port))
