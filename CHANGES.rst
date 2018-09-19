@@ -1,7 +1,7 @@
 Changes
 =======
 
-0.4.5 (unreleased)
+0.4.5 (2018-09-19)
 ------------------
 
 - Allow to use URIs with no path
