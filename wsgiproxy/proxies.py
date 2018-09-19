@@ -67,7 +67,6 @@ class HttpClient(object):
         ConnClass = ssl and self.HTTPSConnection or self.HTTPConnection
         uri = ssl and uri[8:] or uri[7:]
         port = ssl and 443 or 80
-        host, path = uri.split('/', 1)
         try:
             host, path = uri.split('/', 1)
         except ValueError:
