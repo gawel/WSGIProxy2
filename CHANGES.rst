@@ -4,7 +4,7 @@ Changes
 0.4.6 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- PATCH added into (default) list of allowed methods
 
 
 0.4.5 (2018-09-19)
