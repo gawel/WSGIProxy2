@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-version = '0.4.6'
+version = '0.4.7.dev0'
 
 
 def read(name):
