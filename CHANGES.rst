@@ -1,7 +1,7 @@
 Changes
 =======
 
-0.4.6 (unreleased)
+0.4.6 (2019-02-22)
 ------------------
 
 - PATCH added into (default) list of allowed methods
