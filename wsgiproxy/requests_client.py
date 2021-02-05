@@ -35,6 +35,8 @@ class HttpClient(object):
         location = response.headers.get('location') or None
         status = '%s %s' % (response.status_code, response.reason)
 
+        if 'transfer-encoding' in response.headers:
+            del response.headers['transfer-encoding']
         headers = [(k.title(), v) for k, v in response.headers.items()]
 
         return (status, location, headers,

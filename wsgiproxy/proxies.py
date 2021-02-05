@@ -86,9 +86,10 @@ class HttpClient(object):
         response = conn.getresponse()
         status = '%s %s' % (response.status, response.reason)
         length = response.getheader('content-length')
+        resp_headers = [(k,v) for (k,v) in response.getheaders() if k.lower() != 'transfer-encoding']
         body = response.read(int(length)) if length else response.read()
         result = (status, response.getheader('location', None),
-                  response.getheaders(), [body])
+                  resp_headers, [body])
         conn.close()
         return result
 
