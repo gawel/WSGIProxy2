@@ -1,5 +1,6 @@
 graft docs
 prune docs/_build
+prune .tox/
 graft wsgiproxy
 include *.rst
 include *_fixt.py
@@ -9,4 +10,4 @@ include *.py
 include *.txt
 include COPYING
 include buildout.cfg
-include tox.ini
+include *.ini

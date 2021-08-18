@@ -1,11 +1,10 @@
 Changes
 =======
 
-0.4.7 (unreleased)
+0.5.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
-
+- Drop support for python3.6 and bellow
 
 0.4.6 (2019-02-22)
 ------------------
