@@ -7,8 +7,9 @@ def read(name):
     try:
         with open(name) as fd:
             return fd.read()
-    except:
+    except Exception:
         return ''
+
 
 setup(name='WSGIProxy2',
       version=version,
@@ -17,10 +18,8 @@ setup(name='WSGIProxy2',
       classifiers=[
           'License :: OSI Approved :: MIT License',
           'Topic :: Internet :: WWW/HTTP :: WSGI :: Application',
-          'Programming Language :: Python :: 2.6',
-          'Programming Language :: Python :: 2.7',
-          'Programming Language :: Python :: 3.2',
-          'Programming Language :: Python :: 3.3',
+          'Programming Language :: Python :: 3.7',
+          'Programming Language :: Python :: 3.8',
       ],
       keywords='wsgi proxy',
       author='Gael Pasgrimaud',
