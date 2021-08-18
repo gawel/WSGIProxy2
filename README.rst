@@ -7,7 +7,7 @@ With pip::
 
 Install optionnal backends::
 
-  $ pip install requests restkit urllib3
+  $ pip install requests urllib3
 
 
 Usage
@@ -41,10 +41,4 @@ Use `urllib3 <http://pypi.python.org/pypi/urllib3>`_::
 Use `requests <http://pypi.python.org/pypi/requests>`_. This client support response streaming::
 
   >>> proxy = HostProxy(application_url, client='requests')
-
-Use `restkit <http://pypi.python.org/pypi/restkit>`_. This client support
-request and response streaming but does not support python3 (will be fixed with
-the next release)::
-
-  >>> proxy = HostProxy(application_url, client='restkit') # doctest: +SKIP
 

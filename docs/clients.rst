@@ -8,8 +8,6 @@ Available http client adapters
 
 .. autoclass:: wsgiproxy.requests_client.HttpClient
 
-.. autoclass:: wsgiproxy.restkit_client.HttpClient
-
 Use your own HTTP client::
 
   >>> def client(uri, method, body, headers):
