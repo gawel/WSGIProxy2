@@ -3,7 +3,6 @@ from webob import exc
 from webob.compat import PY3, url_quote
 import logging
 import socket
-import six
 import re
 
 try:
@@ -227,7 +226,7 @@ class Proxy(object):
         start_response(status, headers)
 
         if method == "HEAD":
-            return [six.b('')]
+            return [b'']
 
         return app_iter
 

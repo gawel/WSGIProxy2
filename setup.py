@@ -29,7 +29,7 @@ setup(name='WSGIProxy2',
       packages=find_packages(exclude=['ez_setup', 'README_fixt', 'tests']),
       include_package_data=True,
       zip_safe=False,
-      install_requires=['webob', 'six'],
+      install_requires=['webob'],
       entry_points="""
       # -*- Entry points: -*-
       """,
