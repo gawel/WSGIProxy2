@@ -1,7 +1,7 @@
 Changes
 =======
 
-0.5.1 (unreleased)
+0.5.1 (2021-08-26)
 ------------------
 
 - remove stale dep on six
