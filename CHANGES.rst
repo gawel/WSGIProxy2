@@ -4,7 +4,9 @@ Changes
 0.5.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- remove stale dep on six
+
+- use github actions as CI
 
 
 0.5.0 (2021-08-18)
