@@ -5,7 +5,7 @@ With pip::
 
   $ pip install WSGIProxy2
 
-Install optionnal backends::
+Install optional backends::
 
   $ pip install requests urllib3
 
@@ -28,17 +28,17 @@ WSGI application::
   <html>...
   ...</html>
 
-The Proxy application accept some keyword arguments. Those arguments are passed
+The Proxy application accepts some keyword arguments. Those arguments are passed
 to the client during the process.
 
-If no client as specified then python httplib is used. It's recommended to use
+If no client is specified then python httplib is used. It's recommended to use
 a more robust client able to manage a connection pool and stuff.
 
 Use `urllib3 <http://pypi.python.org/pypi/urllib3>`_::
 
   >>> proxy = HostProxy(application_url, client='urllib3')
 
-Use `requests <http://pypi.python.org/pypi/requests>`_. This client support response streaming::
+Use `requests <http://pypi.python.org/pypi/requests>`_. This client supports response streaming::
 
   >>> proxy = HostProxy(application_url, client='requests')
 
